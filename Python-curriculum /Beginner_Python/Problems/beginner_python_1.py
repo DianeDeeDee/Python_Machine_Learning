@@ -1,12 +1,22 @@
-import random
-import sys
-import os
+#Romove import statements if they are not used: they slow down the code
+#import random
+#import sys
+#import os
 
 
 def factorial(n):
 
     """factorial() is the function that will calculate the
-    the factorial of a non-negative integer n
+    the factorial of a non-negative integer n. You can also
+    the math package's factorial() but let's play a little bit with tools :)
+    params:
+
+:n: any integer value.
+
+returns:
+
+:res: an integer, the factorial of n.
+
     """
     res = 1
     for i in range(1, n+1):
@@ -18,9 +28,11 @@ def factorial(n):
 #print("\n\n")
 
 def is_prime(number):
-    """is_prime() is the the function that tests the primality of the input number will check if number is prime.
+    """is_prime() is the the function that tests the primality
+    of the input number will check if number is prime.
     If it's prime, boolean is_it_prime is True, otherwise it' is False.
-    In number theory, Wilson's theorem states that a natural number > 1 is a prime number
+    In number theory, Wilson's theorem states that:
+     a natural number > 1 is a prime number
     if and only if ( number − 1 ) !   ≡   − 1 ( mod number )
     Let's define:
       fact = ( number − 1 ) ! + 1
@@ -29,11 +41,10 @@ def is_prime(number):
 
     fact= (factorial(number - 1) + 1)
     mod = fact % number
-    for number in range(2,1000000):
-        if (mod == 0):
-            is_it_prime = True
-        else:
-            is_it_prime = False
+    if (mod == 0):
+        is_it_prime = True
+    else:
+        is_it_prime = False
 
     return is_it_prime
 
@@ -48,4 +59,5 @@ print("\n\n")
 
 print("We can improve the code so it will check all numbers in range, and not "
       "just one specific number.")
-print("Then, we can using an output.txt where all prime number are saved automatically. ;)")
+print("Then, we can using an output.txt where all prime number "
+      "are saved automatically. ;)")
