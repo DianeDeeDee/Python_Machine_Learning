@@ -1,5 +1,8 @@
 import sys
 import beginner_python_1 as bp1
+
+#import beginner_python_1 as bp1
+
 #import function_1 as f_1
 
 def function_1(number):
