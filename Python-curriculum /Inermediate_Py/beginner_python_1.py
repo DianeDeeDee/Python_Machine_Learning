@@ -6,6 +6,13 @@ import os
 def function_1(number):
     return number
 
+print("What is your number?")
+number = sys.stdin.readline()
+number = int(number)
+
+if __name__ == '__main__':
+	print('The number is ' + str(number))
+
 def factorial(n):
 
     """
@@ -50,13 +57,8 @@ def is_prime(number):
 
 print("\n\n")
 
-if __name__ == '__main__':
-    print("What is your number?")
-    number = sys.stdin.readline()
-    number = int(number)
-    print('The number is ' + str(number))
-    print("- Come on Magic Ball give me the answer! Is %s a prime? "%number)
-    print("-",is_prime(number),"!")
-    print("- How cool it's working! Let's try another number...")
+print("- Come on Magic Ball give me the answer! Is %s a prime? "%number)
+print("-",is_prime(number),"!")
+print("- How cool it's working! Let's try another number...")
 
 print("\n\n")
