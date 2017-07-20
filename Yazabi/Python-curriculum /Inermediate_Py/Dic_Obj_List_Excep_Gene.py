@@ -98,6 +98,11 @@ print( "New first=",first )
 
 print( "\n" )
 print( "--------------------Objects" )
+"""
+In Python the basic elements of programming are things like strings,
+dictionaries, integers, functions, and so on... They are all objects. 
+This means they have certain things in common.
+"""
 
 original_string = '    some text    '
 
@@ -175,15 +180,69 @@ else:
     result()
     print( "choice=",choice )
 
-
+print("\n")
+print("An Exmeple of Class: ")
+"""
+The real trick is that we can create our own blueprints.These are called classes.
+We can define our own class of object - and from this create as many instances of
+this class as we want. All the instances will be different - depending on what data
+they are given when they are created. They will all have the methods (and other properties)
+from the blueprint - the class.
+So lets look at a simple example. We define our own class using the class keyword.
+Methods are defined like functions - using the def keyword. They are indented to show
+that they are inside the class.
+"""
 class OurClass(object):
     def __init__(self, arg1, arg2):
+        """
+        The __init__ method (init for initialise) is called
+        when the object is instantiated.
+        Instantiation is done by (effectively) calling the class.
+        the arguments are: 'arg1' and 'arg2'
+        When we access attributes of an object we do it by name (or by reference).
+        Here instance is a reference to our new object.
+        We access the printargs method of the instance object using instance.printargs.
+        In order to access object attributes from within the __init__ method we need a
+        reference to the object.
+        Whenever a method is called, a reference to the main object is
+        passed as the first argument. By convention you always call this first argument
+        to your methods self: self.arg1 = arg1
+                              self.arg2 = arg2
+
+        The 'functions' that are part of an object are called methods.
+        The values are called 'attributes'.
+        """
         self.arg1 = arg1
         self.arg2 = arg2
     def printargs(self):
+        """
+        This method doesn't take any arguments - so when we define it, we only need
+        to specify the self parameter which is always passed to object methods.
+        When this method is called it looks up (and prints)
+        the original arguments which were saved as object attributes by __init__.
+
+        """
         print( "self.arg1=", self.arg1 )
         print( "self.arg2=", self.arg2 )
 
 instance = OurClass('arg1', 'arg2') #instance of OurClass
-print( type(instance))
+print( "type(instance)=", type(instance))
+print( "instance.arg1=", instance.arg1 )
 instance.printargs() #When we call instance.printargs() these original arguments are printed.
+
+#You can examine all the methods and attributes that are associated with an object using the dir command:
+print(dir(OurClass))
+
+"""
+There is lots more still to learn. Some subjects I could expand this tutorial to cover include :
+    inheritance
+    class attributes
+    __dict__
+    subclassing built in types
+    __new__
+    __getattr__ and __setattr__
+    private attributes (single and double underscore)
+    classmethods and staticmethods
+
+"""
+
