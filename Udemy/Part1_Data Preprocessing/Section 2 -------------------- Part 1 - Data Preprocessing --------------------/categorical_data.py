@@ -1,10 +1,11 @@
 # Data Preprocessing
-#indep variables =Country,Age and Salary; Dep variable=purchased
 # Importing the libraries
 import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
-
+#No need to import libraries in R
+# first and last column are cathegories. The cathegories for Country are France
+#Spain and Germ. The cathegory in purchase are Yes and No.
 # Importing the dataset
 dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values

@@ -10,6 +10,7 @@ dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:, :-1].values
 y = dataset.iloc[:, 3].values
 
+#Missing Data: we will replace a missing data by the mean of all the data in the column where the data is missing
 # Taking care of missing data
 from sklearn.preprocessing import Imputer
 imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
