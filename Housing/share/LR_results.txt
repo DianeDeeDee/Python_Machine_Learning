@@ -1,0 +1,72 @@
+y = target['MEDV']
+model = sm.OLS(y, X).fit()
+predictions = model.predict(X) # make the predictions by the model
+model.summary()
+
+<class 'statsmodels.iolib.summary.Summary'>
+"""
+                            OLS Regression Results: medv ~ sum (13 variables)
+==============================================================================
+Dep. Variable:                   MEDV   R-squared:                       0.954
+Model:                            OLS   Adj. R-squared:                     0.952
+Method:                 Least Squares   F-statistic:                     845.9
+Date:                Sat, 16 Sep 2017   Prob (F-statistic):            2.87e-320
+Time:                        14:06:33   Log-Likelihood:                    -1556.3
+No. Observations:                 506   AIC:                             3137.
+Df Residuals:                     494   BIC:                             3187.
+Df Model:                          12
+Covariance Type:            nonrobust
+======================================================================
+                 coef      std err        t         P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+CRIM          -0.1416      0.036        -3.942      0.000        -0.212      -0.071
+ZN              0.0412        0.015        2.689     0.007      0.011       0.071
+INDUS        -0.0366      0.069        -0.535      0.593        -0.171       0.098
+CHAS         3.2579        0.961        3.388      0.001         1.369       5.147
+NOX           -10.9053     3.424       -3.185      0.002         -17.632      -4.179
+RM             7.1424        0.289        24.717      0.000       6.575       7.710
+AGE            -0.0449      0.014        -3.237      0.001        -0.072      -0.018
+DIS             -1.2289      0.206        -5.976      0.000        -1.633      -0.825
+RAD           0.1995        0.071        2.811      0.005          0.060       0.339
+TAX            -0.0100      0.004       -2.388      0.017          -0.018      -0.002
+PTRATIO    -0.6587      0.112       -5.890      0.000          -0.878      -0.439
+B                0.0167       0.003        5.828      0.000           0.011       0.022
+======================================================================
+Omnibus:                      277.074   Durbin-Watson:                   0.926
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             3083.793
+Skew:                           2.148   Prob(JB):                         0.00
+Kurtosis:                      14.305   Cond. No.                     8.13e+03
+======================================================================
+
+
+
+                            OLS Regression Results: medv ~ chas + rm + dis + ptratio + b +lstat 
+
+======================================================================									 Dep. Variable:                   MEDV   R-squared:                       0.957
+Model:                            OLS   Adj. R-squared:                  0.956
+Method:                 Least Squares   F-statistic:                     1853.
+Date:                Sat, 16 Sep 2017   Prob (F-statistic):               0.00
+Time:                        14:27:09   Log-Likelihood:                -1537.2
+No. Observations:                 506   AIC:                             3086.
+Df Residuals:                     500   BIC:                             3112.
+Df Model:                           6
+Covariance Type:            nonrobust
+=====================================================================
+              coef      std err      t         P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------
+CHAS           2.9135      0.907      3.211      0.001       1.131       4.696
+RM             5.7809      0.237     24.361       0.000       5.315       6.247
+DIS           -0.4197      0.123     -3.416       0.001      -0.661      -0.178
+PTRATIO        -0.6254     0.091     -6.855       0.000      -0.805      -0.446
+B              0.0153      0.003      6.023        0.000       0.010       0.020
+LSTAT         -0.5028       0.041    -12.398      0.000      -0.583      -0.423
+======================================================================
+Omnibus:                      185.681   Durbin-Watson:                   1.014
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):             1105.939
+Skew:                           1.479   Prob(JB):                    7.05e-241
+Kurtosis:                       9.611   Cond. No.                     1.48e+03
+======================================================================
+
+
+
+
